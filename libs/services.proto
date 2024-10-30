@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package prophet;
+
+service ProphetService {
+    rpc ProcessEvents (ProcessEventsRequest) returns (ProcessEventsResponse) {}
+    
+    rpc BlockIpRange (BlockIpRangeRequest) returns (BlockIpRangeResponse) {}
+
+    rpc UnblockIpRange (UnblockIpRangeRequest) returns (UnblockIpRangeResponse) {}
+
+    rpc GetSuspiciousEvents (GetSuspiciousEventsRequest) returns (GetSuspiciousEventsResponse) {}
+}
+
+message Event {
+    string ip_address = 1;
+    string user = 2;
+    int64 timestamp = 3;
+}
+
+message ProcessEventsRequest {
+    repeated Event events = 1;
+}
+
+message ProcessEventsResponse {
+}
+
+message BlockIpRangeRequest {
+    string ip_range = 1;
+}
+
+message BlockIpRangeResponse {
+}
+
+message UnblockIpRangeRequest {
+    string ip_range = 1;
+}
+
+message UnblockIpRangeResponse {
+}
+
+message GetSuspiciousEventsRequest {
+    int32 number_of_events = 1;
+}
+
+message GetSuspiciousEventsResponse {
+    repeated string suspicious_events = 1;
+}
