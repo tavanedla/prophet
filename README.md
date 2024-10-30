@@ -4,7 +4,7 @@ The API services supported by this server are defined in libs/services.proto.
 
 The service is able to persist state, making it resilient to server crashes. On each mutation, data is written to log files located in 'data_dir/'.
 
-Prerequisites - 
+## Prerequisites - 
 
 1. Install bazel
 
@@ -18,7 +18,7 @@ $ sudo apt-get install bazel
 $ curl -sSL "https://github.com/fullstorydev/grpcurl/releases/download/v1.8.7/grpcurl_1.8.7_linux_x86_64.tar.gz" | sudo tar -xz -C /usr/local/bin
 ```
 
-Launch the server - 
+## Launch the server - 
 
 1. Build - Initial build can take upto 20 minutes.
 
@@ -31,7 +31,7 @@ $ bazel build :prophet_server --cxxopt=-std=c++2a
 $ bazel-bin/prophet_server
 ```
 
-Sending requests to server - 
+## Sending requests to server - 
 
 After launching the server, open another terminal to send some requests to it.
 
