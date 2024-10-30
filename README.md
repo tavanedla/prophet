@@ -35,6 +35,9 @@ $ bazel-bin/prophet_server
 
 After launching the server, open another terminal to send some requests to it.
 
+> [!WARNING]
+> The system doesn't perform any input validation. So the behavior in such scenarios is undefined.
+
 1. Send a request to process events
 ```
 grpcurl \
